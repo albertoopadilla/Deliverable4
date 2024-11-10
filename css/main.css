@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    height: 100%
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+div {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+details {
+    background-color: #e4e4e4;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+    font-size: 1.1em;
+    outline: none;
+}
+
+details[open] summary {
+    margin-bottom: 10px;
+}
+
+details ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+details ul li {
+    margin-bottom: 5px;
+}
+
+details ul a {
+    display: block; /* Ensures each link starts a new line */
+    padding: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #003366;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #0044cc;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+    body,main, nav, div{
+        background-color: black;
+        color:white;
+    }
+
+    summary{
+        color:black;
+    }
+}
