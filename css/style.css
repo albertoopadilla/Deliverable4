@@ -1,0 +1,348 @@
+/* Mobile-First Layout */
+header, nav, footer {
+    text-align: center; /* Center align text in the header */
+    padding: 10px; /* Padding for header */
+    background-color: #003366; /* Header background color */
+    color: white; /* Header text color */
+}
+
+/* Font Styles */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif; /* Font family for headings */
+}
+
+/* Headers */
+
+header h1 {
+    font-size: 1.5em; /* Font size for header h1 */
+}
+
+header div:first-of-type {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+}
+
+header div:first-of-type a {
+    color: white;
+    text-align: left;
+}
+
+
+/* Keyframes for pop effect on header image */
+@keyframes pop {
+    0% {
+        transform: scale(1); /* Start at normal size */
+    }
+    10% {
+        transform: scale(1.1); /* Enlarge quickly */
+    }
+    90% {
+        transform: scale(1.1); /* Hold the enlarged state */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+
+/* Pop effect on header image */
+header img {
+    border-radius: 50%; /* Round image */
+    margin-top: 10px; /* Margin on top of image */
+    cursor: pointer; /* Show pointer to indicate clickability */
+}
+
+header img:active {
+    animation: pop 5s ease-out; /* Animation for image click */
+}
+
+
+#skip a {
+    display:block;
+    color: white;
+    padding: 2% 2%;
+    text-decoration: underline;
+  }
+
+/* Navigation styles */
+nav {
+    white-space: nowrap; /* Prevent line breaks */
+    display:flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Align items horizontally */
+    justify-content: left; /* Align items to the left */
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav ul li a {
+    font-size: 90%;
+    text-decoration: none; /* Remove underline */
+    color: white; /* Link color */
+    padding: 10px 20px; /* Padding for links */
+    display: inline-block; /* Make links block elements */
+    background-color: #0066ff; /* Initial background color */
+    /*border-radius: 5px; /* Round corners */
+    overflow:clip;
+    text-overflow:ellipsis;
+}
+
+nav ul li a:hover {
+    background-color: #0057e7; /* Background color on hover */
+}
+
+/* Summary styling to make it sticky */
+details{
+    width: 50vw;
+}
+
+nav details summary {
+    background: #0044cc; /* Background color */
+    padding: 10px 0px; /* Padding for summary */
+    cursor: pointer; /* Show pointer on hover */
+    border-radius: 5px; /* Round corners */
+    position: sticky; /* Make the summary sticky */
+    top: 0; /* Stick to the top */
+    z-index: 10; /* Ensure it stays above other content */
+    
+    /*display:inline-flex*/
+}
+
+nav details summary :first-of-type{
+    margin-right: 10px
+}
+
+nav details ul {
+    /*overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Align items horizontally */
+}
+
+nav details[open] > ul {
+    display: flex; /* Display list when open */
+    align-content: center;
+    flex-direction: column;
+}
+
+/* Main Content */
+main {
+    padding: 20px; /* Padding for main content */
+}
+
+h2 {
+    font-size: 1.3em; /* Font size for h2 */
+    color: #0044cc; /* Text color for h2 */
+}
+/*
+/* Athlete result table styling */
+
+/*#athlete-result-table*/
+section {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px; /* Gap between grid items */
+    margin-bottom: 20px; /* Margin at the bottom */
+    width: 100%; /* Full width */
+}
+
+table td {
+    padding: 10px; /* Padding for table cells */
+    border: 1px solid #ddd; /* Cell border */
+    font-size: 80%;
+}
+
+/* Keyframes for scale-up effect on table row */
+@keyframes scaleUp {
+    from {
+        transform: scale(1); /* Start at normal size */
+    }
+    to {
+        transform: scale(1.02); /* Scale up */
+    }
+}
+
+/* Scale-up effect on table rows on hover */
+table tbody tr:hover {
+    animation: scaleUp 0.3s ease-in-out forwards; /* Apply animation */
+}
+
+table thead {
+    background-color: black; /* Background color for header */
+    color: white; /* Text color for header */
+    padding: 10px; /* Padding for header */
+    font-weight: bold; /* Bold text for header */
+    position: sticky; /* Make header sticky */
+    top: 0; /* Stick to the top */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #cac5c5; /* Background for even rows */
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* Background for odd rows */
+}
+
+table a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Dark Mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212 !important; /* Background color for dark mode */
+    }
+
+    section{
+        color: black;
+        border-color: #555 !important;
+    }
+
+    section h2 {
+        color: #4281FF
+    }
+
+    thead {
+        background-color: #423e3e !important; /* Header background in dark mode */
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #CCCCCC !important; /* Even row background in dark mode */
+    }
+}
+
+/* Prefers Reduced Motion support */
+@media (prefers-reduced-motion: reduce) {
+    header img:active {
+        animation: none;
+    }
+
+    table tbody tr:hover {
+        animation: none;
+    }
+
+    header img, nav ul li a, button, #searchInput {
+        transition: none;
+    }
+}
+
+/* Style buttons */
+div button {
+    display:block;
+    margin: auto; /* Spacing between buttons */
+    padding: 10px 20px;
+    font-size: 80%;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: black;
+    border-style: groove;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the search input */
+#searchInput {
+    width: 80%; /* Make the input fill the container */
+    padding: 10px 15px; /* Add padding inside the input */
+    font-size: 80%; /* Set the font size */
+    border: 2px solid #ccc; /* Set a light gray border */
+    border-radius: 25px; /* Round the corners */
+    background-color: #f9f9f9; /* Light gray background */
+    transition: all 0.3s ease; /* Smooth transition for focus and hover */
+  }
+  
+  /* Add a focus effect to highlight the input when clicked */
+  #searchInput:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #4CAF50; /* Change border color when focused */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.6); /* Add a subtle green glow effect */
+  }
+  
+  /* Style for placeholder text */
+  #searchInput::placeholder {
+    color: #888; /* Darker gray color for the placeholder */
+    font-style: italic; /* Italicize the placeholder text */
+  }
+  
+
+/* Footer Styles */
+
+footer a {
+    color: white; /* Link color in footer */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Font Awesome Icon Styles */
+i.fa-brands {
+    font-size: 1.5em; /* Font size for brand icons */
+    color: white; /* Color for icons */
+}
+
+/* tablet */
+@media screen and (min-width: 700px) {
+    nav details[open] > ul {
+        display: grid; /* Display list when open */
+        grid-template-columns: 25vw 25vw;
+        width: 100%;
+    }
+
+}
+
+/* Desktop*/
+@media screen and (min-width: 1000px){
+
+    /* Style buttons */
+    div button {
+        display:inline-block;
+        text-align: center;
+        margin: 0 10px; /* Spacing between buttons */
+        padding: 10px 20px;
+        font-size: 80%;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: black;
+        border-style: groove;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    div button:first-of-type{
+        margin:auto
+    }
+
+    /* Hover effect for buttons */
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #skip div {
+        margin:auto
+    }
+
+    #skip a {
+        display:inline;
+        padding:10px 20px;
+        color: white;
+        padding: 2% 1%;
+        text-decoration: underline;
+      }
+
+}
